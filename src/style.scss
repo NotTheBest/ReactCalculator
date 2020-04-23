@@ -1,0 +1,140 @@
+@mixin test-border-number {
+  border-style: solid;
+  border-color: orange;
+}
+
+@mixin test-border-operation {
+  border-style: solid;
+  border-color: pink;
+}
+
+.wrapper {
+  display: grid;
+  grid-template: 40px 50px 50px 50px 50px 50px 50px / 60px 60px 60px 60px;
+  grid-template-areas: 'top top top top'
+                       'main main main main'
+                       'clear clear divide multiply'
+                       'seven eight nine subtract'
+                       'four five six add'
+                       'one two three equals'
+                       'zero zero decimal equals';
+  gap: 5px;
+  background-color: white;
+  height:  340px;
+  width: 240px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  
+  .topDisplay {
+    grid-area: top;
+    text-align: right;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .mainDisplay {
+    grid-area: main;
+    border-style: solid;
+    border-color: green;
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .number-button:hover {
+    background-color: orange;
+  }
+  
+  .operation-button:hover {
+    background-color: pink;
+  }
+  
+  #zero {
+    grid-area: zero;
+    @include test-border-number;
+  }
+  
+  #one {
+    grid-area: one;
+    @include test-border-number;
+  }
+  
+  #two {
+    grid-area: two;
+    @include test-border-number;
+  }
+  
+  #three {
+    grid-area: three;
+    @include test-border-number;
+  }
+  
+  #four {
+    grid-area: four;
+    @include test-border-number;
+  }
+  
+  #five {
+    grid-area: five;
+    @include test-border-number;
+  }
+  
+  #six {
+    grid-area: six;
+    @include test-border-number;
+  }
+  
+  #seven {
+    grid-area: seven;
+    @include test-border-number;
+  }
+  
+  #eight {
+    grid-area: eight;
+    @include test-border-number;
+  }
+  
+  #nine {
+    grid-area: nine;
+    @include test-border-number;
+  }
+  
+  #add {
+    grid-area: add;
+    @include test-border-operation;
+  }
+  
+  #subtract {
+    grid-area: subtract;
+    @include test-border-operation;
+  }
+  
+  #multiply {
+    grid-area: multiply;
+    @include test-border-operation;
+  }
+  
+  #divide {
+    grid-area: divide;
+    @include test-border-operation;
+  }
+  
+  #decimal {
+    grid-area: decimal;
+    @include test-border-operation;
+  }
+  
+  #clear {
+    grid-area: clear;
+    @include test-border-operation;
+  }
+  
+  #equals {
+    grid-area: equals;
+    @include test-border-operation;
+  }
+
+}
